@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+    
+        
+        $(document).ready(function(){
+	
+	$("#AbcShow").attr("disabled",true);
+	
+	$("#AbcHide").click(function(){
+	if(confirm("Are you sure...!!!!!"))
+	{
+		$("#D1").hide(2000);
+		$(this).attr("disabled",true);
+		$("#AbcShow").attr("disabled",false);
+		$("#AbcToggle").text("Show");
+	}
+	});
+	$("#AbcShow").click(function(){
+	if(confirm("Are you sure...!!!!!"))
+	{
+		$("#D1").show(2000);
+		$(this).attr("disabled",true);
+		$("#AbcHide").attr("disabled",false);
+		$("#AbcToggle").text("Hide");
+	}
+	});
+	$("#AbcToggle").click(function(){
+	if(confirm("Are you sure...!!!!!"))
+	{
+		$("#D1").toggle(2000);
+		($(this).text()=="Hide")
+		?($(this).text("Show"),$("#BtnHide").attr("disabled",true),$("#BtnShow").attr("disabled",false))
+		:($(this).text("Hide"),$("#BtnHide").attr("disabled",false),$("#BtnShow").attr("disabled",true));
+	}
+	});
+	$("#AbcPlus").click(function(){
+	var ABCD=parseInt($("#D1").css("height"));
+	if(ABCD<=500)
+	{
+		ABCD+=20;
+		$("#D1").css("height",ABCD);
+		$("#D1").css("width",ABCD);
+	}
+	else{
+		alert("More 600px is not possible.");
+	}
+	});
+	$("#AbcMinus").click(function(){
+	var ABCD=parseInt($("#D1").css("height"));
+	if(ABCD>=220)
+	{
+		ABCD-=20;
+		$("#D1").css("height",ABCD);
+		$("#D1").css("width",ABCD);
+	}
+	else{
+		alert("Less 280px is not possible.");
+	}
+	});
+	});
+
+
+    // button
+  
+</script>
+    </script>
+    
+    </head>
+    <body>
+    
+        <div id="D1"style="height:300px;width:300px;background-color:rgb(32, 236, 13);border-radius:500px;margin-right: 40%;">
+			<b align ="center">
+            </b></div>
+			<hr/>
+			<button id="AbcHide">Hide</button>&nbsp;&nbsp;<button id="AbcShow">Show</button><hr />
+            <button id="AbcToggle">Hide</button><hr/> 
+			
+        <button id="AbcPlus" style="font-size:xx-large;"><b>+</b></button>&nbsp;&nbsp;
+		
+	
+		<button id="AbcMinus" style="font-size:xx-large;"><b>-</b></button><hr/>
+		
+        
+    </html>
